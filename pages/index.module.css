@@ -1,0 +1,5 @@
+.title {
+  @apply text-5xl;
+  @apply text-center;
+  line-height: 1.15;
+}

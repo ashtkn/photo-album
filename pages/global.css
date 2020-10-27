@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+
+html,
+body {
+  @apply bg-gray-900;
+  @apply text-white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@tailwind utilities;

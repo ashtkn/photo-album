@@ -4,20 +4,13 @@ import React from 'react'
 import Carousel, { Modal, ModalGateway } from 'react-images'
 import Gallery from 'react-photo-gallery'
 
+import Avatar from '../components/avatar'
 import Layout from '../components/layout'
 import { siteTitle } from '../constants/site-info'
-import { getSortedPhotosData } from '../lib/photos-repository'
+import { getSortedPhotoList, Photo } from '../lib/photos-repository'
+import styles from './index.module.css'
 
-export default function Home({
-  photos,
-}: {
-  photos: {
-    src: string
-    width: number
-    height: number
-    title?: React.ReactNode
-  }[]
-}): JSX.Element {
+export default function Home({ photos }: { photos: Photo[] }): JSX.Element {
   const [currentImage, setCurrentImage] = React.useState(0)
   const [viewerIsOpen, setViewerIsOpen] = React.useState(false)
 
@@ -40,28 +33,39 @@ export default function Home({
         <title>{siteTitle}</title>
       </Head>
       <Layout>
-        <Gallery photos={photos} onClick={openLightBox} />
-        <ModalGateway>
-          {viewerIsOpen ? (
-            <Modal onClose={closeLightBox}>
-              <Carousel
-                currentIndex={currentImage}
-                views={photos.map((x) => ({
-                  ...x,
-                  source: x.src,
-                  caption: x.title,
-                }))}
-              />
-            </Modal>
-          ) : null}
-        </ModalGateway>
+        <div className="flex py-4">
+          <div>
+            <Avatar />
+          </div>
+          <div className="pr-4">
+            <h2 className="text-4xl">Welcome!</h2>
+            <h1 className={styles.title}>Asahi's Gallery</h1>
+          </div>
+        </div>
+        <div className="py-4">
+          <Gallery photos={photos} onClick={openLightBox} />
+          <ModalGateway>
+            {viewerIsOpen ? (
+              <Modal onClose={closeLightBox}>
+                <Carousel
+                  currentIndex={currentImage}
+                  views={photos.map(({ src, caption, ...rest }) => ({
+                    source: src,
+                    caption,
+                    ...rest,
+                  }))}
+                />
+              </Modal>
+            ) : null}
+          </ModalGateway>
+        </div>
       </Layout>
     </>
   )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const photos = getSortedPhotosData()
+  const photos = getSortedPhotoList()
   return {
     props: {
       photos,

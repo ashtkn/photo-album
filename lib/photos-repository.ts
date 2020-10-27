@@ -2,17 +2,20 @@ import moment from 'moment'
 
 import photos from '../constants/photos'
 
-export const getSortedPhotosData = (): {
+export type Photo = {
   src: string
   width: number
   height: number
   date: string
-  title?: React.ReactNode
-}[] => {
+  caption?: React.ReactNode
+}
+
+export const getSortedPhotoList = (): Photo[] => {
   return photos
-    .map(({ filename, width, height, createdAt }) => {
+    .map(({ filename, title, width, height, createdAt }) => {
       return {
         src: require(`@public/images/${filename}`),
+        caption: title,
         width,
         height,
         createdAt: moment(createdAt),
