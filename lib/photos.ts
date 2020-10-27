@@ -6,9 +6,12 @@ export const getSortedPhotosData = (): {
   height: number
   title?: React.ReactNode
 }[] => {
-  return photos.map((photo) => {
+  return photos.map(({ filename, width, height }) => {
+    console.log(filename)
     return {
-      ...photo,
+      src: require(`@public/images/${filename}`),
+      width,
+      height,
     }
   })
 }
