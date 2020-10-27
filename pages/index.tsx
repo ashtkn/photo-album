@@ -6,7 +6,7 @@ import Gallery from 'react-photo-gallery'
 
 import Layout from '../components/layout'
 import { siteTitle } from '../constants/site-info'
-import { getSortedPhotosData } from '../lib/photos'
+import { getSortedPhotosData } from '../lib/photos-repository'
 
 export default function Home({
   photos,

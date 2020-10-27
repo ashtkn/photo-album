@@ -29,6 +29,7 @@
     "date-fns": "^2.16.1",
     "gray-matter": "^4.0.2",
     "imagemin-mozjpeg": "^9.0.0",
+    "moment": "^2.29.1",
     "next": "^9.5.5",
     "next-optimized-images": "^2.6.2",
     "react": "^16.13.1",
