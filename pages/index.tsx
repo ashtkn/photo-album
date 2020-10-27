@@ -1,59 +1,70 @@
 import { GetStaticProps } from 'next'
 import Head from 'next/head'
-import Link from 'next/link'
 import React from 'react'
+import Carousel, { Modal, ModalGateway } from 'react-images'
+import Gallery from 'react-photo-gallery'
 
-import Date from '../components/date'
-import Layout, { siteTitle } from '../components/layout'
-import { getSortedPostsData } from '../lib/posts'
-import utilStyles from '../styles/utils.module.css'
+import Layout from '../components/layout'
+import { siteTitle } from '../constants/site-info'
+import { getSortedPhotosData } from '../lib/photos'
 
 export default function Home({
-  allPostsData,
+  photos,
 }: {
-  allPostsData: {
-    date: string
-    title: string
-    id: string
+  photos: {
+    src: string
+    width: number
+    height: number
+    title?: React.ReactNode
   }[]
 }): JSX.Element {
+  const [currentImage, setCurrentImage] = React.useState(0)
+  const [viewerIsOpen, setViewerIsOpen] = React.useState(false)
+
+  const openLightBox = React.useCallback(
+    (event, { index }: { index: number }) => {
+      setCurrentImage(index)
+      setViewerIsOpen(true)
+    },
+    []
+  )
+
+  const closeLightBox = () => {
+    setCurrentImage(0)
+    setViewerIsOpen(false)
+  }
+
   return (
-    <Layout home>
+    <>
       <Head>
         <title>{siteTitle}</title>
       </Head>
-      <section className={utilStyles.headingMd}>
-        <p>[Your Self Introduction]</p>
-        <p>
-          (This is a sample website - you’ll be building a site like this in{' '}
-          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-        </p>
-      </section>
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Blog</h2>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, date, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>
-                <a>{title}</a>
-              </Link>
-              <br />
-              <small className={utilStyles.lightText}>
-                <Date dateString={date} />
-              </small>
-            </li>
-          ))}
-        </ul>
-      </section>
-    </Layout>
+      <Layout>
+        <Gallery photos={photos} onClick={openLightBox} />
+        <ModalGateway>
+          {viewerIsOpen ? (
+            <Modal onClose={closeLightBox}>
+              <Carousel
+                currentIndex={currentImage}
+                views={photos.map((x) => ({
+                  ...x,
+                  source: x.src,
+                  caption: x.title,
+                }))}
+              />
+            </Modal>
+          ) : null}
+        </ModalGateway>
+      </Layout>
+    </>
   )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const allPostsData = getSortedPostsData()
+  const photos = getSortedPhotosData()
   return {
     props: {
-      allPostsData,
+      photos,
     },
   }
 }
