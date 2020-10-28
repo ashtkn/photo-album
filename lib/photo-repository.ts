@@ -35,7 +35,7 @@ export const getSortedPhotoList = (): Photo[] => {
       }
     })
     .sort((a, b) => {
-      return a.createdAt.isBefore(b.createdAt) ? -1 : 1
+      return a.createdAt.isBefore(b.createdAt) ? 1 : -1
     })
     .map(({ createdAt, ...rest }) => {
       return {
