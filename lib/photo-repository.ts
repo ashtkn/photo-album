@@ -1,6 +1,6 @@
 import moment from 'moment'
 
-import photos from '../data/photos.json'
+import photos from '../data/photos'
 import {
   resolveMultipleSizeImages,
   resolveOriginalSizeImage,
