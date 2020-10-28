@@ -10,7 +10,7 @@ export default function Layout({
   children: React.ReactNode
 }): JSX.Element {
   return (
-    <div className={styles.container}>
+    <div className="lg:container px-4">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta

@@ -33,13 +33,13 @@ export default function Home({ photos }: { photos: Photo[] }): JSX.Element {
         <title>{siteTitle}</title>
       </Head>
       <Layout>
-        <div className="flex py-4">
+        <div className="flex py-4 items-center">
           <div>
             <Avatar />
           </div>
-          <div className="pr-4">
-            <h2 className="text-4xl">Welcome!</h2>
-            <h1 className={styles.title}>Asahi's Gallery</h1>
+          <div className="pl-4">
+            <h2 className="text-lg">Welcome!</h2>
+            <h1 className={styles.title}>Asahi's Photo Gallery</h1>
           </div>
         </div>
         <div className="py-4">
