@@ -2,10 +2,11 @@ import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import React from 'react'
 
+import Footer from '../components/footer'
 import Header from '../components/header'
 import Layout from '../components/layout'
 import PhotoGallery from '../components/photo-gallery'
-import { siteTitle } from '../constants/site-info'
+import { siteTitle } from '../constants/info'
 import { getSortedPhotoList, Photo } from '../lib/photo-repository'
 
 type IndexProps = {
@@ -20,7 +21,8 @@ const Index: React.FC<IndexProps> = ({ photos }) => {
       </Head>
       <Layout>
         <Header className="pb-4" />
-        <PhotoGallery photos={photos} />
+        <PhotoGallery className="pb-4" photos={photos} />
+        <Footer className="pt-4" />
       </Layout>
     </>
   )

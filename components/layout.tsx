@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import React from 'react'
 
-import { siteTitle } from '../constants/site-info'
+import { siteTitle } from '../constants/info'
 
 export type LayoutProps = {
   children?: React.ReactNode
