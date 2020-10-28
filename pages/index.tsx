@@ -6,7 +6,7 @@ import Footer from '../components/footer'
 import Header from '../components/header'
 import Layout from '../components/layout'
 import PhotoGallery from '../components/photo-gallery'
-import { siteTitle } from '../constants/info'
+import { siteTitle } from '../constants'
 import { getSortedPhotoList, Photo } from '../lib/photo-repository'
 
 type IndexProps = {

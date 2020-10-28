@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { siteTitle, siteWelcomeText } from '../constants/info'
+import { siteTitle, siteWelcomeText } from '../constants'
 import Avatar from './avatar'
 import styles from './header.module.css'
 

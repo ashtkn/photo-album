@@ -1,7 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 
-import { snsAccountList } from '../constants/info'
+import { snsAccountList } from '../constants'
 
 export type SnsAccountsProps = {
   className?: string

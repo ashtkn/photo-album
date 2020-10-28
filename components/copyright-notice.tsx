@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { copyrightText } from '../constants/info'
+import { copyrightText } from '../constants'
 
 export type CopyrightNoticeProps = {
   className?: string
