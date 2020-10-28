@@ -7,8 +7,4 @@ body {
   @apply text-white;
 }
 
-* {
-  box-sizing: border-box;
-}
-
 @tailwind utilities;
