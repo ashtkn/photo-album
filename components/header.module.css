@@ -1,0 +1,13 @@
+.container {
+  @apply flex;
+  @apply items-center;
+}
+
+.welcome {
+  @apply text-lg;
+}
+
+.title {
+  @apply text-2xl;
+  line-height: 1.15;
+}

@@ -2,7 +2,6 @@ import Head from 'next/head'
 import React from 'react'
 
 import { siteTitle } from '../constants/site-info'
-import styles from './layout.module.css'
 
 export default function Layout({
   children,
@@ -10,7 +9,7 @@ export default function Layout({
   children: React.ReactNode
 }): JSX.Element {
   return (
-    <div className="lg:container px-4">
+    <div className="lg:container p-4">
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
