@@ -1,12 +1,13 @@
 import moment from 'moment'
 
-import photos from '../constants/photos'
+import photos from '../data/photos.json'
 import {
   resolveMultipleSizeImages,
   resolveOriginalSizeImage,
 } from './photo-resolver'
 
 export type Photo = {
+  key: string
   src: string
   srcSet: string[]
   sizes: string[]
@@ -14,16 +15,17 @@ export type Photo = {
   height: number
   originalSizeImageSrc: string
   caption?: React.ReactNode
-  date: string
+  createDate: string
 }
 
 export const getSortedPhotoList = (): Photo[] => {
   return photos
-    .map(({ filename, title, width, height, createdAt }) => {
+    .map(({ key, filename, title, width, height, createDate }) => {
       const { src, srcSet } = resolveMultipleSizeImages(filename)
       const sizes = ['(min-width: 480px) 50vw,(min-width: 1024px) 33.3vw,100vw']
       const originalSizeImage = resolveOriginalSizeImage(filename)
       return {
+        key,
         src,
         srcSet,
         sizes,
@@ -31,16 +33,16 @@ export const getSortedPhotoList = (): Photo[] => {
         height,
         originalSizeImageSrc: originalSizeImage,
         caption: title,
-        createdAt: moment(createdAt),
+        createDate: moment(createDate),
       }
     })
     .sort((a, b) => {
-      return a.createdAt.isBefore(b.createdAt) ? 1 : -1
+      return a.createDate.isBefore(b.createDate) ? 1 : -1
     })
-    .map(({ createdAt, ...rest }) => {
+    .map(({ createDate, ...rest }) => {
       return {
         ...rest,
-        date: createdAt.format('YYYY/MM/DD'),
+        createDate: createDate.format('YYYY/MM/DD'),
       }
     })
 }

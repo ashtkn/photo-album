@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 
-import photos from '../../constants/photos'
+import photos from '../../data/photos.json'
 
 export default (req: NextApiRequest, res: NextApiResponse): void => {
   res.status(200).json({
