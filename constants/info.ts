@@ -5,6 +5,8 @@ import {
 } from '@fortawesome/free-brands-svg-icons'
 
 export const siteTitle = `Asahi's Photo Gallery`
+export const siteWelcomeText = 'Welcome!'
+export const copyrightText = '©️ 2020 Asahi Takenouchi'
 
 export const snsAccountList = [
   {

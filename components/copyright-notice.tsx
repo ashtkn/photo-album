@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { copyrightText } from '../constants/info'
+
 export type CopyrightNoticeProps = {
   className?: string
 }
@@ -7,7 +9,7 @@ export type CopyrightNoticeProps = {
 const CopyrightNotice: React.FC<CopyrightNoticeProps> = ({ className }) => {
   return (
     <div className={className}>
-      <p className="text-center text-xs">©️ 2020 Asahi Takenouchi</p>
+      <p className="text-center text-xs">{copyrightText}</p>
     </div>
   )
 }

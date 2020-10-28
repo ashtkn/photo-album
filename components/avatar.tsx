@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { resolveAvatarImage } from '../lib/avatar-resolver'
 import styles from './avatar.module.css'
 
 export type AvatarProps = {
@@ -7,12 +8,10 @@ export type AvatarProps = {
 }
 
 const Avatar: React.FC<AvatarProps> = ({ className }) => {
+  const avatarImage = resolveAvatarImage()
   return (
     <div className={className}>
-      <img
-        src={require('@public/images/avatar.jpg')}
-        className={styles.avatar}
-      ></img>
+      <img src={avatarImage} className={styles.avatar}></img>
     </div>
   )
 }
