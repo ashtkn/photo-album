@@ -8,7 +8,11 @@ import PhotoGallery from '../components/photo-gallery'
 import { siteTitle } from '../constants/site-info'
 import { getSortedPhotoList, Photo } from '../lib/photos-repository'
 
-const Index = ({ photos }: { photos: Photo[] }): JSX.Element => {
+type IndexProps = {
+  photos: Photo[]
+}
+
+const Index: React.FC<IndexProps> = ({ photos }) => {
   return (
     <>
       <Head>

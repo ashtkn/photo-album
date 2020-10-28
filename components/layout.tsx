@@ -3,11 +3,11 @@ import React from 'react'
 
 import { siteTitle } from '../constants/site-info'
 
-export default function Layout({
-  children,
-}: {
-  children: React.ReactNode
-}): JSX.Element {
+export type LayoutProps = {
+  children?: React.ReactNode
+}
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="lg:container p-4">
       <Head>
@@ -29,3 +29,5 @@ export default function Layout({
     </div>
   )
 }
+
+export default Layout
