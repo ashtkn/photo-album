@@ -1,5 +1,6 @@
 import React from 'react'
 
+import { siteTitle } from '../constants/site-info'
 import Avatar from './avatar'
 import styles from './header.module.css'
 
@@ -14,7 +15,7 @@ const Header: React.FC<HeaderProps> = ({ className }) => {
         <Avatar className="pr-4" />
         <div>
           <h2 className={styles.welcome}>Welcome!</h2>
-          <h1 className={styles.title}>Asahi's Photo Gallery</h1>
+          <h1 className={styles.title}>{siteTitle}</h1>
         </div>
       </div>
     </div>

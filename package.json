@@ -29,6 +29,7 @@
     "date-fns": "^2.16.1",
     "gray-matter": "^4.0.2",
     "imagemin-mozjpeg": "^9.0.0",
+    "jimp": "^0.16.1",
     "moment": "^2.29.1",
     "next": "^9.5.5",
     "next-optimized-images": "^2.6.2",
@@ -38,6 +39,7 @@
     "react-photo-gallery": "^8.0.0",
     "remark": "^12.0.1",
     "remark-html": "^12.0.0",
+    "responsive-loader": "^2.2.0",
     "tailwindcss": "^1.9.6"
   },
   "devDependencies": {

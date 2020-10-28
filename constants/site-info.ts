@@ -1,1 +1,1 @@
-export const siteTitle = 'Photo Album'
+export const siteTitle = `Asahi's Photo Gallery`

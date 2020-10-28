@@ -2,7 +2,7 @@ import React from 'react'
 import Carousel, { Modal, ModalGateway } from 'react-images'
 import Gallery from 'react-photo-gallery'
 
-import { Photo } from '../lib/photos-repository'
+import { Photo } from '../lib/photo-repository'
 
 export type PhotoGalleryProps = {
   photos: Photo[]
@@ -28,16 +28,24 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ photos, className }) => {
 
   return (
     <div className={className}>
-      <Gallery photos={photos} onClick={openLightBox} />
+      <Gallery
+        photos={photos.map(({ src, srcSet, sizes, width, height }) => ({
+          src,
+          srcSet,
+          sizes,
+          width,
+          height,
+        }))}
+        onClick={openLightBox}
+      />
       <ModalGateway>
         {viewerIsOpen ? (
           <Modal onClose={closeLightBox}>
             <Carousel
               currentIndex={currentImage}
-              views={photos.map(({ src, caption, ...rest }) => ({
-                source: src,
+              views={photos.map(({ originalSizeImageSrc, caption }) => ({
+                source: originalSizeImageSrc,
                 caption,
-                ...rest,
               }))}
             />
           </Modal>
