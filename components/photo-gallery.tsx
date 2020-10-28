@@ -29,8 +29,7 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ photos, className }) => {
   return (
     <div className={className}>
       <Gallery
-        photos={photos.map(({ key, src, srcSet, sizes, width, height }) => ({
-          key,
+        photos={photos.map(({ src, srcSet, sizes, width, height }) => ({
           src,
           srcSet,
           sizes,
