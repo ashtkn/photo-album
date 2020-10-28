@@ -7,7 +7,7 @@ import Header from '../components/header'
 import Layout from '../components/layout'
 import PhotoGallery from '../components/photo-gallery'
 import { siteTitle } from '../constants'
-import { getSortedPhotoList, Photo } from '../lib/photo-repository'
+import { getPhotoList, Photo } from '../lib/photo-repository'
 
 type IndexProps = {
   photos: Photo[]
@@ -31,7 +31,7 @@ const Index: React.FC<IndexProps> = ({ photos }) => {
 export default Index
 
 export const getStaticProps: GetStaticProps = async () => {
-  const photos = getSortedPhotoList()
+  const photos = getPhotoList()
   return {
     props: {
       photos,
