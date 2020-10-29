@@ -3,6 +3,7 @@ import Carousel, { Modal, ModalGateway } from 'react-images'
 import Gallery from 'react-photo-gallery'
 
 import { Photo } from '../lib/photo-repository'
+import Emoji from './emoji'
 
 export type PhotoGalleryProps = {
   photos: Photo[]
@@ -43,10 +44,34 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ photos, className }) => {
           <Modal onClose={closeLightBox}>
             <Carousel
               currentIndex={currentImage}
-              views={photos.map(({ originalSizeImageSrc, caption }) => ({
-                source: originalSizeImageSrc,
-                caption,
-              }))}
+              views={photos.map(
+                ({
+                  originalSizeImageSrc,
+                  title,
+                  location,
+                  cameraModel,
+                  lens,
+                }) => ({
+                  source: originalSizeImageSrc,
+                  caption: (
+                    <div>
+                      <p className="text-lg">{title}</p>
+                      {location ? (
+                        <p className="text-xs">
+                          <Emoji className="p-1" symbol="📍" />
+                          {`${location}`}
+                        </p>
+                      ) : null}
+                      {cameraModel && lens ? (
+                        <p className="text-xs">
+                          <Emoji className="p-1" symbol="📷" />
+                          {`${cameraModel}, ${lens}`}
+                        </p>
+                      ) : null}
+                    </div>
+                  ),
+                })
+              )}
             />
           </Modal>
         ) : null}

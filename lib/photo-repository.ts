@@ -11,22 +11,56 @@ export type Photo = {
   width: number
   height: number
   originalSizeImageSrc: string
-  caption?: React.ReactNode
+  title: string
+  location: string
+  cameraMaker: string
+  cameraModel: string
+  lens: string
+  focalLength: string
+  exposureTime: string
+  fNumber: string
+  isoSpeedRatings: string
+  creatorTool: string
 }
 
 export const getPhotoList = (): Photo[] => {
-  return photos.map(({ filename, title, width, height }) => {
-    const { src, srcSet } = resolveMultipleSizeImages(filename)
-    const sizes = ['(min-width: 480px) 50vw,(min-width: 1024px) 33.3vw,100vw']
-    const originalSizeImage = resolveOriginalSizeImage(filename)
-    return {
-      src,
-      srcSet,
-      sizes,
+  return photos.map(
+    ({
+      filename,
       width,
       height,
-      originalSizeImageSrc: originalSizeImage,
-      caption: title,
+      title,
+      location,
+      cameraMaker,
+      cameraModel,
+      lens,
+      focalLength,
+      exposureTime,
+      fNumber,
+      isoSpeedRatings,
+      creatorTool,
+    }) => {
+      const { src, srcSet } = resolveMultipleSizeImages(filename)
+      const sizes = ['(min-width: 480px) 50vw,(min-width: 1024px) 33.3vw,100vw']
+      const originalSizeImage = resolveOriginalSizeImage(filename)
+      return {
+        src,
+        srcSet,
+        sizes,
+        width,
+        height,
+        originalSizeImageSrc: originalSizeImage,
+        title,
+        location,
+        cameraMaker,
+        cameraModel,
+        lens,
+        focalLength,
+        exposureTime,
+        fNumber,
+        isoSpeedRatings,
+        creatorTool,
+      }
     }
-  })
+  )
 }
