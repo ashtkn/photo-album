@@ -4,11 +4,11 @@ import photos from '../../data/photos'
 
 export default (req: NextApiRequest, res: NextApiResponse): void => {
   res.status(200).json({
-    data: photos.map(({ title, filename }) => {
+    data: photos.map(({ filename, ...rest }) => {
       const baseUrl = req.headers.host
       return {
-        title,
         image: `${baseUrl}/images/${filename}`,
+        ...rest,
       }
     }),
   })
