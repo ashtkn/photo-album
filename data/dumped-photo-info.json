@@ -52,6 +52,19 @@
     "isoSpeedRatings": "400"
   },
   {
+    "filename": "IMG_1710.jpg",
+    "width": 768,
+    "height": 1024,
+    "cameraMaker": "Apple",
+    "cameraModel": "iPhone SE (2nd generation)",
+    "creatorTool": "Adobe Lightroom 4.0 (Macintosh)",
+    "lens": "iPhone SE (2nd generation) back camera 3.99mm f/1.8",
+    "focalLength": "3.99",
+    "exposureTime": "1/60",
+    "fNumber": "f/1.8",
+    "isoSpeedRatings": "250"
+  },
+  {
     "filename": "DSC01239.jpg",
     "width": 1024,
     "height": 683,
@@ -258,5 +271,18 @@
     "exposureTime": "1/160",
     "fNumber": "f/11",
     "isoSpeedRatings": "100"
+  },
+  {
+    "filename": "IMG_2697.jpg",
+    "width": 1024,
+    "height": 768,
+    "cameraMaker": "Apple",
+    "cameraModel": "iPhone 8",
+    "creatorTool": "Adobe Lightroom 4.0 (Macintosh)",
+    "lens": "iPhone 8 back camera 3.99mm f/1.8",
+    "focalLength": "3.99",
+    "exposureTime": "1/2400",
+    "fNumber": "f/1.8",
+    "isoSpeedRatings": "20"
   }
 ]
