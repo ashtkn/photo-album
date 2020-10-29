@@ -64,3 +64,9 @@ export const getPhotoList = (): Photo[] => {
     }
   )
 }
+
+export const getShuffledPhotoList = (): Photo[] => {
+  return getPhotoList().sort((a, b) => {
+    return Math.random() < 0.5 ? 1 : -1
+  })
+}
