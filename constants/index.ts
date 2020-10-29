@@ -17,8 +17,8 @@ export const snsAccountList = [
     href: `https://www.facebook.com/asahi.taken`,
     icon: faFacebook,
   },
-  {
-    href: `https://twitter.com/ashtkn`,
-    icon: faTwitter,
-  },
+  // {
+  //   href: `https://twitter.com/ashtkn`,
+  //   icon: faTwitter,
+  // },
 ]
