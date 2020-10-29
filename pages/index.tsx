@@ -6,7 +6,7 @@ import Footer from '../components/footer'
 import Header from '../components/header'
 import Layout from '../components/layout'
 import PhotoGallery from '../components/photo-gallery'
-import { siteTitle } from '../constants'
+import { siteInfo } from '../constants'
 import { getPhotoList, Photo } from '../lib/photo-repository'
 
 type IndexProps = {
@@ -14,10 +14,11 @@ type IndexProps = {
 }
 
 const Index: React.FC<IndexProps> = ({ photos }) => {
+  const { title } = siteInfo
   return (
     <>
       <Head>
-        <title>{siteTitle}</title>
+        <title>{title}</title>
       </Head>
       <Layout>
         <Header className="pb-4" />

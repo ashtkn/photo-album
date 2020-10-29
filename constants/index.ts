@@ -1,10 +1,16 @@
-import {
-  faFacebook,
-  faInstagram,
-  faTwitter,
-} from '@fortawesome/free-brands-svg-icons'
+import { faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons'
 
-export const siteTitle = `Asahi's Photo Gallery`
+import { resolveOgpImage } from './../lib/ogp-image-resolver'
+
+export const siteInfo = {
+  title: `Asahi's Photo Gallery`,
+  description: `Asahi's Photo Gallery where you can see my photos taken at many places!!`,
+  image: resolveOgpImage(),
+  url: '',
+  author: '@ashtkn',
+}
+
+export const siteTitleText = `Asahi's Photo Gallery`
 export const siteWelcomeText = 'Welcome!'
 export const copyrightText = '©️ 2020 Asahi Takenouchi'
 
@@ -17,8 +23,4 @@ export const snsAccountList = [
     href: `https://www.facebook.com/asahi.taken`,
     icon: faFacebook,
   },
-  // {
-  //   href: `https://twitter.com/ashtkn`,
-  //   icon: faTwitter,
-  // },
 ]
