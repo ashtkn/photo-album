@@ -6,7 +6,7 @@ export const siteInfo = {
   title: `Asahi's Photo Gallery`,
   description: `Asahi's Photo Gallery where you can see my photos taken at many places!!`,
   image: resolveOgpImage(),
-  url: '',
+  url: 'https://photos.takenouchi.work',
   author: '@ashtkn',
 }
 
