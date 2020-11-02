@@ -1,3 +1,3 @@
-# Photo Album
+# Photo Gallery
 
-This website is Asahi Takenouchi's photo album.
+This website is Asahi Takenouchi's photo gallery.
