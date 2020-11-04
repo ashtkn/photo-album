@@ -7,4 +7,9 @@ body {
   @apply text-white;
 }
 
+/* react-photo-gallery issue 174 */
+.react-photo-gallery--gallery > div > img {
+  object-fit: cover;
+}
+
 @tailwind utilities;
