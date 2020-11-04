@@ -9,7 +9,8 @@ body {
 
 /* react-photo-gallery issue 174 */
 .react-photo-gallery--gallery > div > img {
-  object-fit: cover;
+  /* object-fit: cover; */
+  align-self: flex-start;
 }
 
 @tailwind utilities;
