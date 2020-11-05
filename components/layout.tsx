@@ -28,6 +28,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <meta name="twitter:image" content={image} />
         <meta name="twitter:image:alt" content={description} />
         <meta name="twitter:creator" content={author} />
+        <link rel="canonical" href={url} />
       </Head>
       <main>{children}</main>
     </div>
