@@ -1,7 +1,13 @@
+import '@fortawesome/fontawesome-svg-core/styles.css'
+
+import { config as fontAwesomeConfig } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 
 import { snsAccountList } from '../constants'
+
+// https://github.com/FortAwesome/react-fontawesome/issues/234
+fontAwesomeConfig.autoAddCss = false
 
 export type SnsAccountsProps = {
   className?: string
