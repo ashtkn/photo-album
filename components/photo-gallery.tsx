@@ -36,6 +36,7 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ photos, className }) => {
           sizes,
           width,
           height,
+          loading: 'lazy',
         }))}
         onClick={openLightBox}
       />
